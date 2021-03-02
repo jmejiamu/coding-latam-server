@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-
+// Test get method route
 app.get('/test', (req, res) => {
     res.status(200).send("This is a test")
 })
