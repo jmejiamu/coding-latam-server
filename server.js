@@ -3,6 +3,16 @@ const bodyParser = require('body-parser');
 const knex = require('knex');
 const cors = require('cors');
 
+// Database Connection
+const db = knex({
+    client: 'pg',
+    connection: {
+        host: process.env.HOST,
+        user: process.env.USER_NAME,
+        password: process.env.PASSWORD,
+        database: process.env.DATABASE
+    }
+})
 
 const app = express();
 
