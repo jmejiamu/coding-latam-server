@@ -26,6 +26,7 @@ app.use(cors());
 const getUser = require('./routes/get');
 const saveInfo = require('./routes/post');
 const deleteInfo = require('./routes/delete');
+const updateInfo = require('./routes/update');
 
 // Test get method route
 app.get('/test', (req, res) => {
@@ -46,6 +47,11 @@ app.post('/saveinfo', (req, res) => {
 app.delete('/deleteinfo/:user_id', (req, res) => {
     deleteInfo.deleteInfo(req, res, db);
 });
+
+// Update data
+app.put('/update/:user_id', (req, res) => {
+    updateInfo.updateData(req, res, db);
+})
 
 app.listen(3006, process.env.URL, () => {
     console.log("The app is running at port 3006");
