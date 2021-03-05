@@ -1,7 +1,6 @@
 const saveUserData = async (req, res, db) => {
     try {
         const { name, email, fav_color } = req.body;
-        console.log("Con", name, email, fav_color);
         const data = await db
             .insert({
                 name: name,
